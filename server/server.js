@@ -11,6 +11,9 @@ const commentRoutes = require('./routes/comment.routes');
 
 const app = express();
 
+const cors = require('cors');
+app.use(cors({ origin: 'https://kursbrbrbr.netlify.app' }));
+
 // Middleware
 app.use(cors());
 app.use(express.json());
