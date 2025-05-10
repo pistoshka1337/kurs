@@ -11,7 +11,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Логин пользователя
-    axios.post('http://localhost:5000/api/auth/login', { email, password })
+    axios.post('http://kurs-0cvz.onrender.com/api/auth/login', { email, password })
       .then(response => {
         localStorage.setItem('token', response.data.token); // Сохраняем токен в localStorage
         navigate('/'); // Перенаправляем на главную страницу
