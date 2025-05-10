@@ -1,0 +1,54 @@
+/* App.css */
+
+/* Общие стили для всего приложения */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h1, h2, h3 {
+  color: #222;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  padding: 8px 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+input, textarea, select {
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  margin-top: 20px;
+}
