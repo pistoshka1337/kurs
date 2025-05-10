@@ -24,7 +24,7 @@ const Home = () => {
 
   // Загружаем категории один раз
   useEffect(() => {
-    axios.get('http://kurs-0cvz.onrender.com/api/ads/categories')
+    axios.get('https://kurs-0cvz.onrender.com/api/ads/categories')
       .then(response => {
         console.log('Ответ от /categories:', response.data);
         setCategories(response.data);
@@ -37,8 +37,8 @@ const Home = () => {
   // Загружаем объявления при изменении категории или страницы
   useEffect(() => {
     const url = selectedCategory
-      ? `http://kurs-0cvz.onrender.com/api/ads?category=${encodeURIComponent(selectedCategory)}`
-      : 'http://kurs-0cvz.onrender.com/api/ads';
+      ? `https://kurs-0cvz.onrender.com/api/ads?category=${encodeURIComponent(selectedCategory)}`
+      : 'https://kurs-0cvz.onrender.com/api/ads';
 
     const params = {
       page,
@@ -59,7 +59,7 @@ const Home = () => {
   }, [selectedCategory, page]);
 
   const handleDelete = (id) => {
-    axios.delete(`http://kurs-0cvz.onrender.com/api/ads/${id}`, {
+    axios.delete(`https://kurs-0cvz.onrender.com/api/ads/${id}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(() => {
