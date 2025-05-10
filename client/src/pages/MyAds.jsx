@@ -9,7 +9,7 @@ const MyAds = () => {
 
   useEffect(() => {
     // Получаем все объявления текущего пользователя
-    axios.get('http://localhost:5000/api/ads/my', {
+    axios.get('http://kurs-0cvz.onrender.com/api/ads/my', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
@@ -28,7 +28,7 @@ const MyAds = () => {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/api/ads/${id}`, {
+    axios.delete(`http://kurs-0cvz.onrender.com/api/ads/${id}`, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
