@@ -12,7 +12,7 @@ const EditAd = () => {
 
   useEffect(() => {
     // Получаем данные объявления по ID
-    axios.get(`http://localhost:5000/api/ads/${id}`)
+    axios.get(`http://kurs-0cvz.onrender.com/api/ads/${id}`)
       .then(response => {
         const ad = response.data;
         setTitle(ad.title);
@@ -28,7 +28,7 @@ const EditAd = () => {
     e.preventDefault();
     const updatedAd = { title, description, category };
 
-    axios.patch(`http://localhost:5000/api/ads/${id}`, updatedAd, {
+    axios.patch(`http://kurs-0cvz.onrender.com/api/ads/${id}`, updatedAd, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`
       }
