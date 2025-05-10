@@ -11,7 +11,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Регистрация пользователя
-    axios.post('http://kurs-0cvz.onrender.com/api/auth/register', { email, password })
+    axios.post('https://kurs-0cvz.onrender.com/api/auth/register', { email, password })
       .then(response => {
         navigate('/login'); // Перенаправляем на страницу логина
       })
