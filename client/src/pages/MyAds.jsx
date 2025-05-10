@@ -9,7 +9,7 @@ const MyAds = () => {
 
   useEffect(() => {
     // Получаем все объявления текущего пользователя
-    axios.get('http://kurs-0cvz.onrender.com/api/ads/my', {
+    axios.get('https://kurs-0cvz.onrender.com/api/ads/my', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
