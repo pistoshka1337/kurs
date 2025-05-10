@@ -20,7 +20,7 @@ const AdForm = () => {
 
     try {
       await axios.post(
-        'http://localhost:5000/api/ads',
+        'http://kurs-0cvz.onrender.com/api/ads',
         { title, description, category },
         { headers: { Authorization: `Bearer ${token}` } }
       );
