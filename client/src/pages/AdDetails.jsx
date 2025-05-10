@@ -21,7 +21,7 @@ const AdDetails = () => {
 
   useEffect(() => {
     // Загрузка объявления
-    axios.get(`http://localhost:5000/api/ads/${id}`)
+    axios.get(`http://kurs-0cvz.onrender.com/api/ads/${id}`)
       .then(response => {
         setAd(response.data);
       })
@@ -30,7 +30,7 @@ const AdDetails = () => {
       });
 
     // Загрузка комментариев
-    axios.get(`http://localhost:5000/api/comments/${id}`)
+    axios.get(`http://kurs-0cvz.onrender.com/api/comments/${id}`)
       .then(response => {
         setComments(response.data);
       })
@@ -42,7 +42,7 @@ const AdDetails = () => {
   const handleAddComment = () => {
     if (!newComment.trim()) return;
 
-    axios.post(`http://localhost:5000/api/comments/${id}`, 
+    axios.post(`http://kurs-0cvz.onrender.com/api/comments/${id}`, 
       { text: newComment },
       { headers: { Authorization: `Bearer ${token}` } }
     )
