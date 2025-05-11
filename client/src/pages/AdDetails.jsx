@@ -55,20 +55,6 @@ const AdDetails = () => {
     });
   };
 
-  // Функция для удаления объявления
-  const handleDelete = () => {
-    axios.delete(`http://localhost:5000/api/ads/${id}`, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then(() => {
-        // Перенаправление на главную страницу после удаления
-        navigate('/');
-      })
-      .catch(error => {
-        console.error('Ошибка при удалении:', error);
-      });
-  };
-
   if (!ad) return <div>Загрузка...</div>;
 
   return (
@@ -77,12 +63,6 @@ const AdDetails = () => {
       <p><strong>Описание:</strong> {ad.description}</p>
       <p><strong>Категория:</strong> {ad.category}</p>
       <p className="ad-meta"><strong>Дата:</strong> {new Date(ad.date).toLocaleDateString()}</p>
-      {userId === ad.user._id && (
-        <div className="ad-actions">
-          <Link to={`/edit/${ad._id}`} className="btn btn-edit">Редактировать</Link>
-          <button onClick={handleDelete} className="btn btn-delete">Удалить</button>
-        </div>
-      )}
   
       <hr />
       <h2>Комментарии</h2>
