@@ -55,18 +55,6 @@ const AdDetails = () => {
     });
   };
 
-  const handleDelete = (id) => {
-    axios.delete(`https://kurs-0cvz.onrender.com/api/ads/${id}`, {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then(() => {
-        setAds(prev => prev.filter(ad => ad._id !== id));
-      })
-      .catch(error => {
-        console.error('Ошибка при удалении:', error);
-      });
-  };
-
   if (!ad) return <div>Загрузка...</div>;
 
   return (
@@ -75,10 +63,6 @@ const AdDetails = () => {
       <p><strong>Описание:</strong> {ad.description}</p>
       <p><strong>Категория:</strong> {ad.category}</p>
       <p className="ad-meta"><strong>Дата:</strong> {new Date(ad.date).toLocaleDateString()}</p>
-      <>
-                <button onClick={() => handleDelete(ad._id)}>Удалить</button>
-                <Link to={`/edit/${ad._id}`}>Редактировать</Link>
-              </>
   
       <hr />
       <h2>Комментарии</h2>
