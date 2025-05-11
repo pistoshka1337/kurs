@@ -3,17 +3,14 @@ const Comment = require('../models/Comment');
 // Добавление нового комментария
 exports.addComment = async (req, res) => {
   try {
-    // Создание нового комментария
     const comment = new Comment({
-      text: req.body.text,          // Текст комментария
-      user: req.userId,             // Идентификатор пользователя
-      ad: req.params.adId           // Идентификатор объявления
+      text: req.body.text,          
+      user: req.userId,            
+      ad: req.params.adId          
     });
 
     // Сохранение комментария в базе данных
     await comment.save();
-
-    // Ответ с добавленным комментарием
     res.status(201).json(comment);
   } catch (err) {
     // Обработка ошибок
@@ -29,10 +26,9 @@ exports.getComments = async (req, res) => {
   try {
     // Поиск комментариев для конкретного объявления
     const comments = await Comment.find({ ad: req.params.adId })
-      .populate('user', 'email')     // Заполнение данных пользователя (email)
-      .sort({ createdAt: -1 });      // Сортировка по дате создания (по убыванию)
+      .populate('user', 'email')     
+      .sort({ createdAt: -1 });      
 
-    // Ответ с комментариями
     res.json(comments);
   } catch (err) {
     // Обработка ошибок
